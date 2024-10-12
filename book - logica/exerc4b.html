@@ -1,0 +1,47 @@
+<!--b) Digamos que o número de chinchilas de uma fazenda triplica a cada ano,
+após o primeiro ano. Elaborar um programa que leia o número inicial de
+chinchilas e anos e informe ano a ano o número médio previsto de chinchilas
+da fazenda. Validar a entrada para que o número inicial de chinchilas seja
+maior ou igual a 2 (um casal).-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 139 e 140</title>
+</head>
+<body>
+    <h1>Programa Criação de Chinchilas</h1>
+
+    <p>N° de Chinchilas:
+        <input type="number" id="numeroChinc">
+    </p>
+    <p>N° de Anos:
+        <input type="number" id="numeroDeAnos">
+    </p>
+
+    <input type="button" value="Mostrar Previsão" onclick="calcularChinchilas()">
+    <h3 id="resultado"></h3>
+
+    <script>
+        function calcularChinchilas(){
+            var numeroChinc = parseInt(document.getElementById("numeroChinc").value);
+            var numeroDeAnos = parseInt(document.getElementById("numeroDeAnos").value);
+            var resultado = document.getElementById("resultado");
+
+            if (numeroChinc < 2 ||isNaN(numeroChinc) || isNaN(numeroDeAnos) || numeroDeAnos == ""){
+                alert("Por favor, digite valores válidos. O número de chinchilas deve ser maior ou igual a 2 e o número de anos deve ser maior que 0.");
+               return;
+            }
+
+            let totalChinc = numeroChinc;
+
+            for(let i = 1; i <= numeroDeAnos; i++){
+                resultado.innerHTML += "No ano " + i + ", haverá " + totalChinc + " Chinchilas.<br>";
+                totalChinc *= 3;
+            }
+        }
+    </script>
+
+</body>
+</html>

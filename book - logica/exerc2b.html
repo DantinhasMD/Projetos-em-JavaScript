@@ -1,0 +1,41 @@
+<!-- b) Elaborar um programa para uma lan house de um aeroporto – O programa deve ler o valor de cada 15
+minutos de uso de um computador e o tempo de uso por um cliente em minutos. Informe o valor a ser pago pelo cliente,
+sabendo que as frações extras de 15 minutos devem ser cobradas de forma integral. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 74 a </title>
+</head>
+<body>
+    <h1>Lan house JS</h1>
+    <label for="valorPor15">Valor</label>
+    <input type="number" id="valorPor15" name="valorPor15"><br><br>
+
+    <label for="tempoDeUso">Tempo de uso (min)</label>        
+    <input type="number" id="tempoDeUso" name="tempoDeUso"><br><br>
+
+    <button onclick="calcularValorTotal()">Calcular Valor</button><br><br>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function calcularValorTotal(){
+            var valorPor15 = document.getElementById("valorPor15").value; 
+            var tempoDeUso = document.getElementById("tempoDeUso").value;
+        
+            if (valorPor15 === "" || tempoDeUso=== "") {
+                document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos.";
+                return;
+            } 
+
+            var tempoPor15 = Math.ceil(tempoDeUso/15);
+            var valorTotal = tempoPor15 * valorPor15;
+
+         document.getElementById("resultado").innerHTML = "Sendo o valor por 15min de R$" + valorPor15 + ", você pagará R$" + valorTotal.toFixed(2);
+        } 
+    </script>
+</body>
+</html>

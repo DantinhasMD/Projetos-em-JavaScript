@@ -1,0 +1,44 @@
+<!-- a) Elaborar um programa que leia o nome de uma fruta e um número. O
+programa deve repetir a exibição do nome da fruta, de acordo com o número
+informado. Utilize o “*” para separar os nomes. -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 139 e 140</title>
+</head>
+<body>
+    <h1>Programa Repete Fruta</h1>
+    <p>Fruta:
+        <input type="text" id="nomeFruta">
+    </p>
+    <p>Número:
+        <input type="number" id="numero">
+    </p>
+
+    <input type="button" value="Repetir Fruta" onclick="repetirNomeFruta()">
+    
+    <h3 id="resposta"></h3>
+
+    <script>
+        function repetirNomeFruta() {
+            var nomeFruta = document.getElementById("nomeFruta").value;
+            var numero = document.getElementById("numero").value;
+            var resposta = document.getElementById("resposta");
+
+            if (numero == "" || isNaN(numero)){
+                alert("Por Favor. Digite um Número");
+                numero.focus();
+                return;
+            }
+
+            var repetirFruta = "";
+            for (var i = 1; i <= numero; i++){
+                repetirFruta += nomeFruta + " * ";
+            }
+            resposta.innerHTML = repetirFruta;
+        }
+    </script>
+</body>
+</html>

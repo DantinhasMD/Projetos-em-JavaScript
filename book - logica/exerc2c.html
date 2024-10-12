@@ -1,0 +1,42 @@
+<!-- c) Um supermercado está com uma promoção – Para aumentar suas vendas no setor de higiene, cada etiqueta 
+de produto deve exibir uma mensagem anunciando 50% de desconto (para um item) na compra de três unidades do 
+produto. Elaborar um programa que leia descrição e preço de um produto. Após, apresente as mensagens indicando a promoção -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 73 a</title>
+</head>
+<body>
+    <h1>Supermercado JS</h1>
+    <label for="nomeProduto">Produto</label>
+    <input type="text" id="nomeProduto" name="nomeProduto"><br><br>
+
+    <label for="precoProduto">Preço R$</label>        
+    <input type="text" id="precoProduto" name="precoProduto"><br><br>
+
+    <button onclick="calcularPromocao()">Mostrar Promoção</button><br><br>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function calcularPromocao(){
+            var nomeProduto = document.getElementById("nomeProduto").value; 
+            var precoProduto = parseFloat(document.getElementById("precoProduto").value);
+        
+            if (nomeProduto === "" || isNaN(precoProduto)) { 
+                document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos.";
+                return;
+            } 
+
+            var valorTotal = precoProduto * 3;
+            var promoção = valorTotal - (precoProduto/2); 
+
+         document.getElementById("resultado").innerHTML = "Na compra de três unidades do " + nomeProduto + ", você paga apenas R$" + promoção.toFixed(2) + 
+         ". O terceiro produto sai por apenas R$" + (precoProduto/2).toFixed(2);
+        } 
+    </script>
+</body>
+</html>

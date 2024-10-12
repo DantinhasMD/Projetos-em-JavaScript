@@ -1,0 +1,34 @@
+<!--d) Elaborar um programa que leia um número e exiba estrelas na página, em linhas diferentes. 
+A cada nova linha, o número de estrelas deve ser incrementado.-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 139 e 140</title>
+</head>
+<body>
+    <h1>Fábrica de Estrelas 2</h1>
+
+    <p>Número de Linhas:
+        <input type="number" id="numeroDeLinhas">
+    </p>
+
+    <input type="button" value="Criar Estrelas" onclick="contarEstrelas()">
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function contarEstrelas(){
+            var numeroDeLinhas = parseInt(document.getElementById("numeroDeLinhas").value);            
+            var resultado = document.getElementById("resultado");
+
+            resultado.innerHTML = "";
+
+            for(i = 1; i <= numeroDeLinhas; i++){ 
+                resultado.innerHTML += "*".repeat(i) + "<br>"; // método "*".repeat(i) para repetir o caractere * o número de vezes correspondente ao valor de i.
+            }
+        }
+    </script>
+</body>
+</html>

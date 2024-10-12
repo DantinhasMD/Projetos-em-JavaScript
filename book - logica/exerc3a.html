@@ -1,0 +1,40 @@
+<!-- a) Elaborar um programa que leia um número. Informe se ele é par ou ímpar. -->
+ <!DOCTYPE html>
+ <html lang="pt-BR">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 105 e 106</title>
+ </head>
+ <body>
+    <h1>Programa Par ou Ímpar</h1>
+
+    <p>Número:
+    <input type="number" id="numero"></p>
+
+    <input onclick="verficarNumero()" type="button" value="Verificar" id="verificar">
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function verficarNumero(){
+            var numero = document.getElementById("numero").value;
+            var resultado = document.getElementById("resultado");
+
+
+            if (isNaN(numero)){
+                alert("Por Favor, Digite um número");
+                document.getElementById("numero").focus();
+                return;
+            } else if (numero % 2 === 0) {
+                resultado.innerHTML = "O número " + numero + " é Par";
+                resultado.style.color = "red"; 
+            } else {
+                resultado.innerHTML = "O número " + numero + " é Impar";
+                resultado.style.color = "blue";
+            }
+        }
+
+    </script>
+ </body>
+ </html>

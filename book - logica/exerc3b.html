@@ -1,0 +1,52 @@
+<!--b) Elaborar um programa que leia a velocidade permitida em uma estrada e a velocidade de um condutor. 
+Se a velocidade for inferior ou igual à permitida, exiba “Sem Multa”. Se a velocidade for de até 20% maior que a
+permitida, exiba “Multa Leve”. E, se a velocidade for superior a 20% da velocidade permitida, exiba “Multa Grave”-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 105 e 106</title>
+</head>
+<body>
+    <h1>Programa Verifica Velocidade</h1>
+
+    <p>Velocidade permitida:
+        <input type="text" id="velocidadePermitida">
+    </p>
+
+    <p>Velocidade do condutor:
+        <input type="text" id="velocidadeDoCondutor">
+    </p>
+
+    <input type="button" value="Verficar Velocidade" id="verificar" onclick="verificarVelocidade()">
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function verificarVelocidade(){
+            var velocidadePermitida = document.getElementById("velocidadePermitida").value;
+            var velocidadeDoCondutor = document.getElementById("velocidadeDoCondutor").value;
+            var resultado = document.getElementById("resultado");
+
+            velocidadePermitida = parseFloat(velocidadePermitida);
+            velocidadeDoCondutor = parseFloat(velocidadeDoCondutor);
+
+            if (isNaN(velocidadeDoCondutor) || isNaN(velocidadePermitida)){
+                alert("Por Favor, Digite números válidos");
+                return;
+            } else if (velocidadeDoCondutor <= velocidadePermitida){
+                resultado.innerHTML = "Sem Multa";
+                resultado.style.color = "yellow";
+            } else if (velocidadeDoCondutor <= velocidadePermitida * 1.2){
+                resultado.innerHTML = "Multa Leve";
+                resultado.style.color = "blue";
+            } else {
+                resultado.innerHTML = "Multa Grave";
+                resultado.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>

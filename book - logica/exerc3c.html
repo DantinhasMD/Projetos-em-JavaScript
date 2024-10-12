@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 105 e 106</title>
+</head>
+<body>
+    <h1>Programa Parquímetro</h1>
+
+    <p>Valor R$:
+        <input type="text" id="valor"></p>
+
+    <p>Tempo (Até 120min):
+        <input type="number" id="tempo"></p>
+
+    <input type="button" value="Confirmar" onclick="verificarValor()">
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function verificarValor() {
+            var valor = parseFloat(document.getElementById("valor").value); 
+            var tempo = parseInt(document.getElementById("tempo").value);    
+            var resultado = document.getElementById("resultado");
+
+            if (isNaN(valor) || isNaN(tempo) || tempo <= 0) {
+                alert('Digite valores válidos');
+                return;
+            }
+
+            var troco = 0;
+            if (tempo <= 30 && valor >= 1) {
+                troco = valor - 1;
+                resultado.innerHTML = "Tempo: " + tempo + " minutos. Troco de R$" + troco.toFixed(2);
+            } else if (tempo <= 60 && valor >= 1.75) {
+                troco = valor - 1.75;
+                resultado.innerHTML = "Tempo: " + tempo + " minutos. Troco de R$" + troco.toFixed(2);
+            } else if (tempo <= 120 && valor >= 3) {
+                troco = valor - 3;
+                resultado.innerHTML = "Tempo: " + tempo + " minutos. Troco de R$" + troco.toFixed(2);
+            } else {
+                resultado.innerHTML = "Valor Insuficiente";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- Uma farmácia está com uma promoção – Na compra de duas unidades de um mesmo medicamento, o cliente recebe 
+como desconto os centavos do valor total. Elaborar um programa que leia descrição e preço de um medicamento. Informe 
+o valor do produto na promoção. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 74 a </title>
+</head>
+<body>
+    <h1>Farmácia JS</h1>
+    <label for="nomeMedicamento">Medicamento</label>
+    <input type="text" id="nomeMedicamento" name="nomeMedicamento"><br><br>
+
+    <label for="precoMedicamento">Preço R$</label>        
+    <input type="text" id="precoMedicamento" name="precoMedicamento"><br><br>
+
+    <button onclick="calcularPromocao()">Mostrar Promoção</button><br><br>
+    <!--Coloando como formulario, o botão reinicia a página e não permite ver o resultado-->
+    <div id="resultado"></div> <!--Precisa ter onde exibir o resultado-->
+
+    <script>
+        function calcularPromocao(){
+            var nomeMedicamento = document.getElementById("nomeMedicamento").value; //Pega os valores inseridos
+            var precoMedicamento = parseFloat(document.getElementById("precoMedicamento").value);
+        
+            if (nomeMedicamento === "" || isNaN(precoMedicamento)) { //Nome vazio OU is Not A Number
+                document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos.";
+                return;
+            } 
+
+            var valorTotal = precoMedicamento * 2;
+            var desconto = valorTotal - Math.floor(valorTotal); //Arredonda para o Menor valor
+            var promoção = valorTotal - desconto;
+
+         document.getElementById("resultado").innerHTML = "Na compra de duas unidades do " + nomeMedicamento + ", você paga apenas R$" + promoção.toFixed(2);
+        } //INNER - Exibir ou Alterar algo que está dentro de um elemento HTML
+    </script>
+</body>
+</html>

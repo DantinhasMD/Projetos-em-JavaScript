@@ -1,0 +1,46 @@
+<!--c) Elaborar um programa que leia um número e verifique se ele é ou não perfeito. Um número
+dito perfeito é aquele que é igual à soma dos seus divisores inteiros 
+(exceto o próprio número). O programa deve exibir os divisores do número e a soma deles.-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 139 e 140</title>
+</head>
+<body>
+    <h1>Programa Números Perfeitos</h1>
+    <p>Número:
+        <input type="number" id="numero">
+    </p>
+    <input type="button" value="Verficar se é Perfeito" onclick="verificarNumero()">
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function verificarNumero(){
+            var numero = document.getElementById("numero").value;
+            var resultado = document.getElementById("resultado");
+
+            let numerosDivisores = [];
+            let somaNumeros = 0;
+            let tipoDeNumero = "";
+
+            for(i = 1; i < numero; i++){
+                if (numero % i === 0 ){
+                    numerosDivisores += i + " ";
+                    somaNumeros += i;
+                }
+                if (somaNumeros == numero){
+                    tipoDeNumero = "É um Número Perfeito.";
+                } else {
+                    tipoDeNumero = "Não é um Número Perfeito";
+                }
+            }
+
+            resultado.innerHTML = "Os números divisores são: " + numerosDivisores + "<br><br>E sua soma é igual a " + somaNumeros + "<br><br>Sendo que: " + tipoDeNumero;
+        }
+    </script>
+
+</body>
+</html>
