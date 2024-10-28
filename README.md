@@ -1,3 +1,5 @@
+[certificado orange tech.pdf](https://github.com/user-attachments/files/17536031/certificado.orange.tech.pdf)
+
 # Projetos em JavaScript 
 - Aqui você encontra todos os meu projetos/exercícios que foram desenvolvidos utilizando a linguagem JavaScript. São exercícios, desafios e projetos nos níveis: Básico, Intermediário e Avançado!
 
