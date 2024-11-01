@@ -1,5 +1,7 @@
 # Projetos em JavaScript 
 - Aqui você encontra todos os meu projetos/exercícios que foram desenvolvidos utilizando a linguagem JavaScript. São exercícios, desafios e projetos nos níveis: Básico, Intermediário e Avançado!
+
+
 ![certificado js](https://github.com/user-attachments/assets/e4888718-7702-4882-9c19-390d7e0af8ce)
 
 # Book - Lógica
